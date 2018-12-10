@@ -1,0 +1,4 @@
+baseURL = "https://royswale.github.io/"
+languageCode = "en-us"
+title = "Royswale Code Garden"
+theme = "ananke"
