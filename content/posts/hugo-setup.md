@@ -105,7 +105,7 @@ https://gohugo.io/commands/hugo_list_drafts
 
 ### 代码高亮
 
-https://gohugo.io/content-management/syntax-highlighting/#example-highlight-shortcode
+https://gohugo.io/content-management/syntax-highlighting/#example-highlight-shortcode  
 https://gohugo.io/content-management/shortcodes/#highlight  
 
 主要参考这个  
@@ -153,3 +153,37 @@ pygmentsUseClassic = true
 #### Highlight.js
 
 https://highlightjs.org/
+
+https://www.bootcdn.cn/highlight.js/
+
+Hugo中添加代码高亮支持  
+http://note.qidong.name/2017/06/24/hugo-highlight/
+
+Chroma 和 Pygments 都是服务端渲染的方式，都需要安装 python 包 Pygments?
+
+但是他们可以高亮代码的某几行和设置代码起始行号，不知道highlight.js可不可以?
+
+### in-depth with hugo theme
+
+https://forestry.io/blog/up-and-running-with-hugo/
+
+#### custom this ananke theme
+
+copy from `themes/ananke/layouts/partials/site-footer.html` to `gohugoblog/layouts/partials/site-footer.html`  
+append highlight.js code to the bottom
+
+```html
+<link href="https://cdn.bootcss.com/highlight.js/9.13.1/styles/solarized-dark.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+```
+
+copy from `themes/ananke/layouts/_default/single.html` to `gohugoblog/layouts/_default/single.html`  
+remove the width 66.666% class `w-two-thirds-l` to make the main part wider.
+
+```html
+<!-- <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"> -->
+<main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l">
+```
+
+所以说，根目录下的模板文件可以覆盖主题的同名文件吗?
