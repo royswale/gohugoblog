@@ -187,3 +187,17 @@ remove the width 66.666% class `w-two-thirds-l` to make the main part wider.
 ```
 
 所以说，根目录下的模板文件可以覆盖主题的同名文件吗?
+
+#### awesome themes
+
+https://github.com/yscoder/hexo-theme-indigo
+
+https://github.com/kaeyleo/jekyll-theme-H2O
+
+https://github.com/theme-next/hexo-theme-next
+
+### comment plugin
+
+https://valine.js.org/
+
+disqus?
