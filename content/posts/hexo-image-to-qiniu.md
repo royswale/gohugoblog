@@ -33,3 +33,7 @@ I use VSCode to write post with [Paste Image](https://github.com/mushanshitianca
 ```
 
 configure above in "User Settings" in order to compliant to hexo's post assets folder convention.
+
+### 七牛 测试域名
+
+需要把测试域名绑定到自己的已备案域名，测试域名能用一个月。
