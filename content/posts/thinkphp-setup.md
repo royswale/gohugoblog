@@ -127,6 +127,35 @@ https://blog.csdn.net/Developersq/article/details/78386122
 
 https://blog.csdn.net/lw545034502/article/details/79374611
 
+```apache
+
+```
+
+### ThinkPHP 5.1.x 配置
+
+ThinkPHP5.1完全开发手册  
+https://www.kancloud.cn/manual/thinkphp5_1/353946
+
+1. [请求 -> 参数绑定](https://www.kancloud.cn/manual/thinkphp5_1/353991)
+
+	
+
+	> 在使用路由定义的情况下 不建议使用顺序绑定  
+	> URL参数方式改成顺序解析 'url_param_type'         => 1
+
+	所以这个配置保留默认0, 参数绑定方式默认是按照变量名进行绑定
+
+
+2. [路由](https://www.kancloud.cn/manual/thinkphp5_1/353960)
+
+	> ThinkPHP5.1的路由定义更加对象化，并且默认开启路由（不能关闭），如果一个URL没有定义路由，则采用默认的PATH_INFO 模式访问URL
+
+3. 系统常量
+
+	thinkphp 5.1.x 系统常量用 `Env::get('runtime_path')` 来获取
+
+	![2018-12-12-17-08-45-2018121217845](http://qiniu.xingtan.xyz/2018-12-12-17-08-45-2018121217845.png)
+
 ### easywechat
 
 在 tp5 目录下安装 easywechat
@@ -134,6 +163,7 @@ https://blog.csdn.net/lw545034502/article/details/79374611
 https://www.easywechat.com/docs/master/installation
 
 ```bash
+cd ~/tp5
 which composer
 composer require overtrue/wechat -vvv
 ```
@@ -149,7 +179,12 @@ sudo apt install php7.2-xml
 
 然后再次安装 easywechat
 
-### 使用 easywechat + thinkphp 来验证微信接口
+```bash
+composer require overtrue/wechat -vvv
+composer update
+```
+
+#### 使用 easywechat + thinkphp 来验证微信接口
 
 ```bash
 > cd ~/tp5/
@@ -177,30 +212,32 @@ class Index
 	public function index()
 	{
 		$config = [
-			'app_id' => '',
-			'secret' => '',
-			'token' => '',
-			'aes_key' => '',
+			'app_id'  => 'xxxxxxxxxxx',
+			'secret'  => 'xxxxxxxxxxx',
+			'token'   => 'xxxxxxxxxxx',
+			'aes_key' => 'xxxxxxxxxxx',
+
 			'response_type' => 'array',
- 
-            'log' => [
-                'level' => 'debug',
-                // 'file' => __DIR__.'/../../wechat.log',
-                'file' => Env::get('runtime_path') .'wechat/wechat.log',
-            ],
-        ];
+
+			'log' => [
+				'level' => 'debug',
+				// 'file' => __DIR__.'/../../wechat.log',
+				'file' => Env::get('runtime_path') .'wechat/wechat.log',
+			],
+		];
  
 		$app = Factory::officialAccount($config);
-        $response = $app->server->serve();
-        $response->send(); // Laravel 里请使用：return $response;
+		$response = $app->server->serve();
+		$response->send(); // Laravel 里请使用：return $response;
 	}
 }
 ```
 
-
-访问微信授权接口地址，报错，上面代码总配置的日志文件不存在
+访问微信授权接口地址，报错，  
 
 > ...wechat.log" could not be opened: failed to open stream: Permission denied
+
+上面代码中配置的日志文件 `Env::get('runtime_path') .'wechat/wechat.log'` 不存在
 
 ```bash
 > cd ~/tp5
@@ -209,6 +246,7 @@ class Index
 > chmod a+rw runtime/wechat/wechat.log
 ```
 
+> http://example.com/weixin/  
 > 安全模式，验证成功
 
 参考，未使用  
@@ -220,47 +258,112 @@ https://github.com/overtrue/wechat/issues/1245
 https://github.com/qiqizjl/think-wechat
 
 
-### ThinkPHP 5.1.x 配置
+### 微信开发
 
-ThinkPHP5.1完全开发手册  
-https://www.kancloud.cn/manual/thinkphp5_1/353946
-
-1. [请求 -> 参数绑定](https://www.kancloud.cn/manual/thinkphp5_1/353991)
-
-	
-
-	> 在使用路由定义的情况下 不建议使用顺序绑定  
-	> URL参数方式改成顺序解析 'url_param_type'         => 1
-
-	所以这个配置保留默认0, 参数绑定方式默认是按照变量名进行绑定
-
-
-2. [路由](https://www.kancloud.cn/manual/thinkphp5_1/353960)
-
-	> ThinkPHP5.1的路由定义更加对象化，并且默认开启路由（不能关闭），如果一个URL没有定义路由，则采用默认的PATH_INFO 模式访问URL
-
-3. 系统常量
-
-	thinkphp 5.1.x 系统常量用 Env::get('runtime_path') 来获取
-
-	![2018-12-12-17-08-45-2018121217845](http://qiniu.xingtan.xyz/2018-12-12-17-08-45-2018121217845.png)
-
-### 微信小程序商城构建全栈应用
+#### 微信小程序商城构建全栈应用
 
 百度云>全部文件>微信小程序商城构建全栈应用（下...>第9章微信登陆与令牌
 
 https://coding.imooc.com/class/chapter/97.html#Anchor
 
+#### 开发者工具
 
+公众平台测试帐号  
+[微信公众平台接口测试帐号申请](https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login)
 
-### 微信接口授权成功
-
-开发者工具，在线调试接口
-
-微信公众平台接口测试帐号申请   
-https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
-
+在线接口调试工具
 ![2018-12-12-17-03-10-2018121217311](http://qiniu.xingtan.xyz/2018-12-12-17-03-10-2018121217311.png)
+
+[微信web开发者工具](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1455784140)
+
+[全新的 微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html)
+
+> 为了帮助开发者简单和高效地开发和调试微信小程序，我们在原有的公众号网页调试工具的基础上，推出了全新的 [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，集成了公众号网页调试和小程序调试两种开发模式。
+
+
+### 问题
+
+#### guzzlehttp
+
+```bash
+cd ~/tp5
+composer require guzzlehttp/guzzle
+```
+
+```php
+// ~/tp5/application/index/controller/Index.php
+<?php
+namespace app\index\controller;
+
+use GuzzleHttp\Client;
+
+class Index
+{
+	// ...
+
+	public function http()
+	{
+		$client = new Client();
+		$res = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
+		return $res->getBody();
+	}
+}
+```
+
+访问 http://example.com/index/index/http 报错
+
+> cURL error 60: SSL certificate problem: unable to get local issuer certificate (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
+
+
+https://medium.com/@badruayomaya/laravel-paystack-curl-error-e21ffbe9b384  
+https://github.com/yabacon/paystack-php/wiki/cURL-error-60:-SSL-certificate-problem:-unable-to-get-local-issuer-certificate-(see-http:--curl.haxx.se-libcurl-c-libcurl-errors.html)  
+https://stackoverflow.com/a/49071524
+
+1. download https://curl.haxx.se/ca/cacert.pem  
+2. move it to php ext directory or somewhere else  
+3. edit php.ini
+
+	```ini
+	[curl]
+	; A default value for the CURLOPT_CAINFO option. This is required to be an
+	; absolute path.
+	curl.cainfo = "absolute\path\to\cacert.pem"
+	```
+
+4. restart web server
+
+#### ThinkPHP 返回格式 html => json
+
+[响应->响应输出](https://www.kancloud.cn/manual/thinkphp5_1/353994)  
+[响应->响应参数](https://www.kancloud.cn/manual/thinkphp5_1/353995)
+```php
+// 配置文件 ~/tp5/config/app.php
+// 默认输出类型
+'default_return_type'    => 'json',
+// 访问的输出结果就变成了JSON字符串
+```
+或者这样设置header
+```php
+// ~/tp5/application/index/controller/Index.php
+<?php
+namespace app\index\controller;
+
+use GuzzleHttp\Client;
+
+class Index
+{
+	// ...
+
+	public function http()
+	{
+		$client = new Client();
+		$res = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
+		// return $res->getBody();
+		return response()->data($res->getBody())
+			->header('Content-Type', 'text/json; charset=utf-8');
+	}
+}
+```
 
 
 ### Chroma
