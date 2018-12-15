@@ -332,6 +332,9 @@ https://stackoverflow.com/a/49071524
 
 4. restart web server
 
+使用Guzzle进行API测试  
+https://php1024.com/posts/15.htm
+
 #### ThinkPHP 返回格式 html => json
 
 [响应->响应输出](https://www.kancloud.cn/manual/thinkphp5_1/353994)  
