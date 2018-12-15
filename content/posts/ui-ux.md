@@ -14,3 +14,12 @@ https://github.com/dwyl/learn-tachyons
 ### bulma
 
 https://jgthms.com/
+
+### css
+
+#### flex
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+https://css-tricks.com/almanac/properties/f/flex/
+https://css-tricks.com/designing-a-product-page-layout-with-flexbox/
