@@ -201,3 +201,17 @@ https://github.com/theme-next/hexo-theme-next
 https://valine.js.org/
 
 disqus?
+
+
+### custom theme
+
+https://michaelheap.com/creating-a-new-hugo-theme/
+
+> Edit layouts/index.html and add the following content:
+
+看到这里了
+
+TODO: 继续定制自己的主题，简洁
+
+
+https://www.zeolearn.com/magazine/develop-a-theme-for-hugo

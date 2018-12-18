@@ -18,3 +18,7 @@ https://zhuanlan.zhihu.com/p/25105936
 
 微信小程序 微信小程序原生LBS能力的最佳拍档  
 https://lbs.qq.com/qqmap_wx_jssdk/index.html
+
+
+小程序海报组件-生成朋友圈分享海报并生成图片  
+https://github.com/jasondu/wxa-plugin-canvas
