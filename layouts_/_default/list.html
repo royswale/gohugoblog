@@ -7,7 +7,10 @@
       {{ range .Paginator.Pages }}
         <!-- <div class="relative w-100 w-30-l mb4 bg-white"> -->
           <!-- {{- partial "summary.html" . -}} -->
-        <!-- </div> -->
+		<!-- </div> -->
+			<a href="{{.URL}}" class="color-inherit dim link">
+            {{ .Title }}
+            </a>
       {{ end }}
     </section>
     {{- template "_internal/pagination.html" . -}}

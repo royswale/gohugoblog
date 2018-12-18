@@ -324,4 +324,49 @@ https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysq
 	phpinfo();
 	```
 
+### HTTPS
+
+把 SSL 证书文件放到某个目录  
+配置 Nginx 的 server block 相关 https 配置
+
+```bash
+sudo nginx -t
+sudo service nginx status
+sudo service nginx restart
+sudo service nginx status
+```
+
+别忘了防火墙允许https
+
+```bash
+> sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+OpenSSH                    ALLOW       Anywhere
+Nginx HTTP                 ALLOW       Anywhere
+3306                       ALLOW       Anywhere
+OpenSSH (v6)               ALLOW       Anywhere (v6)
+Nginx HTTP (v6)            ALLOW       Anywhere (v6)
+3306 (v6)                  ALLOW       Anywhere (v6)
+
+> sudo ufw allow "Nginx HTTPS"
+Rule added
+Rule added (v6)
+> sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+OpenSSH                    ALLOW       Anywhere
+Nginx HTTP                 ALLOW       Anywhere
+3306                       ALLOW       Anywhere
+Nginx HTTPS                ALLOW       Anywhere
+OpenSSH (v6)               ALLOW       Anywhere (v6)
+Nginx HTTP (v6)            ALLOW       Anywhere (v6)
+3306 (v6)                  ALLOW       Anywhere (v6)
+Nginx HTTPS (v6)           ALLOW       Anywhere (v6)
+```
+
 Bingo!
