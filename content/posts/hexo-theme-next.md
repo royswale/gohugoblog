@@ -4,6 +4,14 @@ date: 2018-12-06T14:48:48+08:00
 draft: false
 ---
 
+## melody
+
+https://github.com/Molunerfinn/hexo-theme-melody  
+https://molunerfinn.com/hexo-theme-melody-doc/#/zh-Hans/  
+Hexo主题开发经验杂谈  
+https://molunerfinn.com/make-a-hexo-theme
+
+
 ## next
 
 ### old

@@ -22,3 +22,7 @@ https://lbs.qq.com/qqmap_wx_jssdk/index.html
 
 小程序海报组件-生成朋友圈分享海报并生成图片  
 https://github.com/jasondu/wxa-plugin-canvas
+
+
+【小程序】mpvue开发小程序初体验  
+https://fridolph.github.io/2018/05/07/%E3%80%90%E5%B0%8F%E7%A8%8B%E5%BA%8F%E3%80%91mpvue%E5%BC%80%E5%8F%91%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E4%BD%93%E9%AA%8C/
