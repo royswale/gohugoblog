@@ -283,6 +283,21 @@ https://coding.imooc.com/class/chapter/97.html#Anchor
 
 ### 问题
 
+#### xdebug
+
+查看phpinfo的输出信息，下载正确的xdebug版本，  
+放到php\ext目录下，修改php.ini
+
+```ini
+[Xdebug]
+zend_extension = D:\Program Files\xampp\php\ext\php_xdebug-2.5.5-5.6-vc11.dll
+xdebug.remote_enable = 1
+xdebug.remote_autostart = 1
+```
+
+然后在phpstorm中配置调试服务器  
+或者在VSCode中xdebug extension来调试
+
 #### guzzlehttp
 
 ```bash
@@ -314,6 +329,9 @@ class Index
 
 > cURL error 60: SSL certificate problem: unable to get local issuer certificate (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
 
+> cURL error 35: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to api.github.com:443 (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
+
+> cURL error 56: OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 0 (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
 
 https://medium.com/@badruayomaya/laravel-paystack-curl-error-e21ffbe9b384  
 https://github.com/yabacon/paystack-php/wiki/cURL-error-60:-SSL-certificate-problem:-unable-to-get-local-issuer-certificate-(see-http:--curl.haxx.se-libcurl-c-libcurl-errors.html)  
@@ -334,6 +352,18 @@ https://stackoverflow.com/a/49071524
 
 使用Guzzle进行API测试  
 https://php1024.com/posts/15.htm
+
+#### curl
+
+https://github.com/php-mod/curl
+
+> 用这个包，没有上面guzzle遇到的问题，无需配置cacert.pem
+
+composer require curl/curl
+
+$curl = new Curl\Curl();
+$curl->get('http://www.example.com/');
+
 
 #### ThinkPHP 返回格式 html => json
 
