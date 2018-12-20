@@ -333,6 +333,8 @@ class Index
 
 > cURL error 56: OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 0 (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
 
+XAMPP - WAMPP PHP - SSL certificate error: unable to get local issuer certificate  https://ourcodeworld.com/articles/read/196/xampp-wampp-php-ssl-certificate-error-unable-to-get-local-issuer-certificate
+
 https://medium.com/@badruayomaya/laravel-paystack-curl-error-e21ffbe9b384  
 https://github.com/yabacon/paystack-php/wiki/cURL-error-60:-SSL-certificate-problem:-unable-to-get-local-issuer-certificate-(see-http:--curl.haxx.se-libcurl-c-libcurl-errors.html)  
 https://stackoverflow.com/a/49071524
@@ -359,11 +361,14 @@ https://github.com/php-mod/curl
 
 > 用这个包，没有上面guzzle遇到的问题，无需配置cacert.pem
 
+```bash
 composer require curl/curl
+```
 
+```php
 $curl = new Curl\Curl();
 $curl->get('http://www.example.com/');
-
+```
 
 #### ThinkPHP 返回格式 html => json
 
