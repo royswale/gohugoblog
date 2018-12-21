@@ -84,7 +84,7 @@ sudo service nginx status
 ```nginx
 server {
 	listen 80;
-	root /home/annoy/tp5/public;
+	root /home/anony/tp5/public;
 	index index.php index.html index.htm;
 	server_name example.com;
 
@@ -128,8 +128,76 @@ https://blog.csdn.net/Developersq/article/details/78386122
 https://blog.csdn.net/lw545034502/article/details/79374611
 
 ```apache
-
+-  RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
++  RewriteRule ^(.*)$ index.php?/$1 [QSA,PT,L]
 ```
+
+#### HTTPS
+
+把域名的SSL证书文件放到某个目录下
+
+编辑 server block 配置文件 `/etc/nginx/sites-available/example.com`
+
+```nginx
+server {
+	listen 80 default_server;
+	server_name example.com;
+	return 301 https://$host$request_uri;
+}
+server {
+	listen 443 ssl default_server;
+	server_name example.com;
+
+	ssl on;
+	ssl_certificate /etc/nginx/domainsslcert/example.com.crt;
+	ssl_certificate_key /etc/nginx/domainsslcert/example.com.key;
+	ssl_session_timeout 5m;
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+	ssl_ciphers replace-with-your-cipher;
+	ssl_prefer_server_ciphers on;
+
+	root /home/anony/tp5/public;
+	index index.php index.html index.htm;
+
+	location / {
+		# try_files $uri $uri/ =404;
+		# try_files $uri /index.php$is_args$args;
+		if (!-e $request_filename) {
+			rewrite ^(.*)$ /index.php?s=/$1 last;
+		}
+	}
+
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+	}
+
+	location ~ /\.ht {
+		deny all;
+	}
+}
+```
+
+以上 ssl 配置部分参考腾讯云的文档
+
+restart nginx
+
+```bash
+sudo service nginx status
+sudo service nginx restart
+sudo service nginx status
+```
+
+UFW
+
+```bash
+sudo ufw status
+sudo ufw app list
+sudo ufw allow 'Nginx HTTPS'
+sudo ufw status
+```
+
+这时就可以用 https:// 访问了
 
 ### ThinkPHP 5.1.x 配置
 
@@ -256,6 +324,150 @@ https://www.easywechat.com/lessons/1
 YII2中服务器端验证总是失败..  
 https://github.com/overtrue/wechat/issues/1245  
 https://github.com/qiqizjl/think-wechat
+
+#### 模板消息
+
+```php
+// ~/tp5/application/weixin/controller/Index.php
+<?php
+
+namespace app\weixin\controller;
+
+use think\facade\Env;
+use EasyWeChat\Factory;
+
+class Index
+{
+    protected $app = null;
+
+    public function __construct()
+    {
+        $config = [
+			'app_id'  => 'xxxxxxxxxxx',
+			'secret'  => 'xxxxxxxxxxx',
+			'token'   => 'xxxxxxxxxxx',
+			'aes_key' => 'xxxxxxxxxxx',
+
+            'response_type' => 'array',
+
+            'log' => [
+                'level' => 'debug',
+                // 'file' => __DIR__.'/../../wechat.log',
+                'file' => Env::get('runtime_path') . 'wechat/wechat.log',
+            ],
+        ];
+
+        $this->app = Factory::officialAccount($config);
+    }
+
+    public function index()
+    {
+        // 接收 & 回复用户消息
+        // https://www.easywechat.com/docs/master/official-account/tutorial
+        $this->app->server->push(function ($message) {
+            return "aha! Bro.";
+        });
+
+        $response = $this->app->server->serve();
+        $response->send(); // Laravel 里请使用：return $response;
+    }
+
+
+//---------------------------------------------------
+// comment out this function after test
+    public function template()
+    {
+        // 模板消息
+        // https://www.easywechat.com/docs/master/official-account/template_message
+        $this->app->template_message->send([
+            'touser' => 'the_user_open_id',
+            'template_id' => 'the_template_id',
+            'url' => 'https://press-to-go-there.com/your/package/info',
+            'data' => [
+                'first' => '你的包裹更新啦',
+                'keyword1' => '43454251460',
+                'keyword2' => '快件到达 【北京三里屯顺丰营业点】',
+                'keyword3' => '2018-12-19 06:30',
+                'remark' => '注意接听电话啊',
+            ],
+        ]);
+    }
+
+//    访问 /weixin/index/template，没有收到服务号发送的模板消息
+//    报错如下
+//    Use of undefined constant CURLOPT_IPRESOLVE - assumed 'CURLOPT_IPRESOLVE' (this will throw an Error in a future version of PHP)
+//    https://github.com/overtrue/wechat/issues/1178
+//    用以下的代码测试以下有没有按照 php curl 扩展
+    /*public function curl()
+    {
+        var_dump(curl_version());
+    }*/
+//    Call to undefined function curl_version()
+//    没有安装
+//    sudo apt search php7.2-curl
+//    sudo apt install php7.2-curl
+//    sudo service nginx status
+//    sudo service nginx restart
+//    sudo service nginx status
+//    安装完成
+//      再次访问 /weixin/index/curl
+//      array(9) { ["version_number"]=> int(473600) ......
+//      ok，打印出了curl版本号等信息
+//    再次访问 /weixin/index/template
+//    网页一片空白，说明没有报错
+//    微信上收到 服务号 发来的模板消息，大功告成！
+//---------------------------------------------------
+}
+```
+
+微信上收到 服务号 发来的模板消息，大功告成！
+
+![](http://qiniu.xingtan.xyz/weixin-template-message.png)
+
+测试成功后，就可以把上面的template代码注释了，  
+因为实际运行时，需要用定时任务，按条件自动发送模板消息  
+
+> - 比如，快递单号和用户的openid(加密一下？)关联关系存储在数据库中，  
+	cron脚本定时查询快递接口，如果有更新，就给相关联的用户发送模板消息
+
+> - 用户从菜单中进入开发的网页，网页中调用微信的jssdk，获取用户相关信息，  
+	用户用表单提交复制粘贴的快递单号，关联关系建立起来了
+
+> - cron 脚本(nodejs 定时任务？) 请求快递接口，所有未签收的快递单号，  
+	如果有更新，就给相关联的用户发送模板消息  
+	缓存？队列？  
+	最终的发送调用还是要通过上面的template中的php代码？  
+	easywechat还没有nodejs支持，可以自己写发送模板消息的nodejs中间件嘛！  
+	https://github.com/51ding/koa-easywechat
+
+> - 缓存，  
+	快递单号和用户openid的关联关系存到数据库，同时缓存在redis里面，  
+	快递单号最新的状态也缓存到redis，以及快递单号是否已经签收的标记，签收后就不再查询快递接口了。  
+	
+> - 队列，  
+	定时任务(nodejs)抓取快递接口，如果该单号的最新状态和缓存之中的不一致，就需要发送模板消息，  
+	把这个要发送模板消息的任务和相关数据，放进队列，  
+	php再从队列中取出任务，一个一个发送出去
+
+参考，未使用
+
+easywechat的使用(laravel + easywechat 开发微信公众号(原创))  
+https://cloud.tencent.com/developer/article/1326726
+
+> 这个文章的模板消息部分提醒了我，用户的openid是存错在数据库里的，发送模板消息是主动发送的  
+	疑问，用户的openid是怎么存储到数据库的呢，怎么第一次拿到用户的openid呢，  
+	用户关注公众号这个动作能拿到openid吗？  
+	还是需要用户关注以后，主动与公众号交互呢？  
+	比如发送消息给公众号，或者从公众号的菜单进入微信网页(自己开发，调用jssdk)，然后拿到openid呢？
+
+easywechat发送模板消息频繁超时小记  
+https://www.luyuqiang.com/easywechat-curl-timeout  
+使用EasyWechat开发java微信公众平台应用（二）——发送不同类型的消息  
+http://www.voidcn.com/article/p-ketxjrgu-sw.html  
+给你的网站加上公众号消息模板异常提醒吧  
+https://hanc.cc/index.php/archives/155/  
+微信调试，各种WebView样式调试、手机浏览器的页面真机调试。便捷的远程调试手机页面、抓包工具，支持：HTTP/HTTPS，无需USB连接设备。
+https://github.com/wuchangming/spy-debugger
 
 
 ### 微信开发

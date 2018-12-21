@@ -56,3 +56,10 @@ git branch -d temp
 看图可以更清晰是怎么回事
 
 ![git-20181214102326](http://qiniu.xingtan.xyz/git-20181214102326.png)
+
+```bash
+git config --list --global
+git config --global user.name yourname
+# git config --global user.name "firstname lastname"
+git config --global user.email yourname@yahoo.com
+```
