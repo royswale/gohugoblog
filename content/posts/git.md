@@ -53,13 +53,30 @@ git branch -d temp
 
 按照上述方法解决了，  
 我是在使用 gohugo 的 submodule 之 public 下遇到的这个问题。  
-看图可以更清晰是怎么回事
+看图 GitKraken 可以更清晰是怎么回事
 
 ![git-20181214102326](http://qiniu.xingtan.xyz/git-20181214102326.png)
 
-```bash
-git config --list --global
-git config --global user.name yourname
-# git config --global user.name "firstname lastname"
-git config --global user.email yourname@yahoo.com
-```
+
+### config
+
+1. 全局或在当前项目配置 name 和 email
+
+	```bash
+	git config --list --global
+	git config --global user.name yourname
+	# git config --global user.name "firstname lastname"
+	git config --global user.email yourname@yahoo.com
+	```
+
+### ignore
+
+1. IntelliJ IDE 生成的 .idea 目录在 .gitignore 文件中添加之后还是被跟踪的问题
+
+	[idea .gitignore(git文件忽略)](https://www.jianshu.com/p/9ff3920d7a63)
+
+	> 发现.idea文件夹下的文件还有变更被提交，这是因为在使用gitignore之前，此文件就以及被跟踪了，这样的话需要移除跟踪，如下命令:
+
+	```bash
+	git rm --cached --force -r .idea
+	```
