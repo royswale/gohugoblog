@@ -4,6 +4,15 @@ date: 2018-12-11T09:11:25+08:00
 draft: false
 ---
 
+### git flow
+
+https://www.ibrand.cc/open/article?course_id=1&chapter_id=2&article_id=6  
+https://github.com/oldratlee/translations/blob/master/git-workflows-and-tutorials/README.md  
+https://github.com/xirong/my-git/blob/master/git-workflow-tutorial.md#23-gitflow%E5%B7%A5%E4%BD%9C%E6%B5%81
+
+https://www.atlassian.com/git/tutorials/comparing-workflows
+
+
 - [ ] https://www.atlassian.com/git/tutorials
 
 ### submodule
