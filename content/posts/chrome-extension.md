@@ -131,6 +131,13 @@ https://github.com/christiannwamba/gist-download-extension
 
 > 这个非常好，和我的需求一致
 
+```js
+cd xxx
+yarn
+yarn build
+yarn watch
+```
+
 ### debug
 
 1. chrome.tabs.executeScript 不指定 tab id 的话，回调函数接收不到返回值
