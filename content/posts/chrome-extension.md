@@ -6,19 +6,27 @@ draft: true
 
 ### docs
 
-https://developer.chrome.com/extensions/getstarted
+https://developer.chrome.com/extensions/devguide
+
+- [x] https://developer.chrome.com/extensions/getstarted
 
 https://developer.chrome.com/extensions/background_pages  
-https://developer.chrome.com/extensions/content_scripts
+
+https://developer.chrome.com/extensions/content_scripts  
+https://developer.chrome.com/extensions/content_scripts#pi
 
 https://developer.chrome.com/extensions/declarativeContent  
 https://developer.chrome.com/extensions/pageAction  
 https://developer.chrome.com/extensions/declare_permissions#host-permissions  
 https://developer.chrome.com/extensions/activeTab  
-https://developer.chrome.com/extensions/user_interface
+https://developer.chrome.com/extensions/user_interface  
+https://developer.chrome.com/extensions/match_patterns
 
 https://developer.chrome.com/extensions/contextMenus  
 https://developer.chrome.com/extensions/samples#search:contextmenus
+
+https://developer.chrome.com/extensions/options  
+https://developer.chrome.com/extensions/tabs
 
 
 ### cookie
@@ -60,8 +68,89 @@ https://stackoverflow.com/questions/26884140/open-import-file-in-a-chrome-extens
 
 for example, autofill form input
 
+```js
+domElement.trigger(new Event('click'))
+```
+
+### parse page dom
+
+https://stackoverflow.com/questions/19758028/chrome-extension-get-dom-content  
+https://stackoverflow.com/a/40906564
+
+> You don't have to use the message passing to obtain or modify DOM.
+
+### xhr
+
+https://developer.chrome.com/extensions/xhr#requesting-permission
+
+> Instead, prefer safer APIs that do not run scripts:
+
+```js
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.example.com/data.json", true);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState == 4) {
+    // JSON.parse does not evaluate the attacker's scripts.
+    var resp = JSON.parse(xhr.responseText);
+  }
+}
+xhr.send();
+```
+
+### tab
+
+https://stackoverflow.com/questions/16503879/chrome-extension-how-to-open-a-link-in-new-tab
+
+### download
+
+https://developer.chrome.com/extensions/downloads  
+https://developer.chrome.com/extensions/samples#search:downloads  
+Download Images  
+Displays all webpage images and allows user to download  
+https://developer.chrome.com/extensions/examples/extensions/download_images.zip
+
+
+https://stackoverflow.com/questions/2153979/chrome-extension-how-to-save-a-file-on-disk  
+https://stackoverflow.com/questions/4845215/making-a-chrome-extension-download-a-file/24162238
+
+### publish
+
+https://developer.chrome.com/extensions/hosting
 
 ### tutorial
 
 Creating a Chrome extension in 2018: The good, the bad and the meh  
 https://checklyhq.com/blog/2018/08/creating-a-chrome-extension-in-2018-the-good-the-bad-and-the-meh/
+
+How to make a Chrome browser extension from scratch | Understanding Chrome extension anatomy  
+https://medium.com/front-end-weekly/how-to-make-a-chrome-browser-extension-from-scratch-chrome-extension-development-basics-basic-ba1daee11123
+
+How to Create a Gist Download Chrome Extension Using React  
+https://www.telerik.com/blogs/how-to-create-a-gist-download-chrome-extension-using-react  
+https://github.com/christiannwamba/gist-download-extension
+
+> 这个非常好，和我的需求一致
+
+### debug
+
+1. chrome.tabs.executeScript 不指定 tab id 的话，回调函数接收不到返回值
+
+2. chrome.contextMenus.create 的属性 onclick 报错的话，用 onClicked
+
+    https://developer.chrome.com/extensions/contextMenus
+
+    > A function that is called back when the menu item is clicked. Event pages cannot use this; instead, they should register a listener for contextMenus.onClicked.
+
+	https://developer.chrome.com/extensions/contextMenus#event-onClicked
+
+	```js
+	chrome.contextMenus.onClicked.addListener(function callback)
+	```
+
+    https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8504764/  
+    https://stackoverflow.com/questions/13166293/about-chrome-tabs-executescript-id-details-callback  
+	http://www.krasimirtsonev.com/blog/article/Chrome-Extension-run-JavaScript-in-the-context-of-the-current-page
+
+### firefox
+
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions

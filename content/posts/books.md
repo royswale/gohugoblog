@@ -23,3 +23,30 @@ https://interpreterbook.com/
 https://mp.weixin.qq.com/s/Re03TuhfFUwTO_EvZ8rXDQ  
 http://craftinginterpreters.com/  
 https://norasandler.com/2017/11/29/Write-a-Compiler.html
+
+
+### javascript
+
+https://eloquentjavascript.net
+
+https://javascript.info/
+
+------
+
+https://flaviocopes.com/javascript-regular-expressions/
+
+https://flaviocopes.com/page/ebooks/
+
+The JavaScript Handbook (171 pages, PDF, ePub and Mobi)  
+https://drive.google.com/open?id=1B-eWVHXw6roKhQWpRkiNNwHtb-66Gzif
+
+The Node.js Handbook (189 pages, PDF, ePub and Mobi)  
+https://drive.google.com/open?id=1EC4Id7Z6dbCHNw2jr1T4VHiQlSvJIP7I
+
+The Express.js Handbook (61 pages, PDF, ePub and Mobi)  
+https://drive.google.com/open?id=1aact9oGi51WNTxU-fwOyjc7B5Rq5H6Un
+
+The Vue.js Handbook (122 pages, PDF, ePub and Mobi)  
+https://drive.google.com/open?id=1tyTNux2-az1yn-PsT8k7OOZTcRCBIb92
+
+------
