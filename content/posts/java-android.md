@@ -4,13 +4,15 @@ date: 2018-12-14T14:11:58+08:00
 draft: false
 ---
 
+https://codelabs.developers.google.com/codelabs/build-your-first-android-app/#0
 
 https://codelabs.developers.google.com/codelabs/android-training-hello-world/#0
 
-https://codelabs.developers.google.com/codelabs/build-your-first-android-app/index.html?index=..%2F..index#0
-
 https://www.raywenderlich.com/1434-java-for-android
 
+https://blog.teamtreehouse.com/java-basics-for-android-development-part-1
+
+https://hencoder.com/
 
 ### jvm languages
 
@@ -19,6 +21,8 @@ https://www.raywenderlich.com/1434-java-for-android
 https://www.codecademy.com/courses/learn-java
 
 https://github.com/google/guava
+
+
 
 #### kotlin
 
