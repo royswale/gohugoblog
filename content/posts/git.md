@@ -4,6 +4,23 @@ date: 2018-12-11T09:11:25+08:00
 draft: false
 ---
 
+### bitbucket
+
+- [x] https://www.atlassian.com/git/tutorials/syncing/git-pull
+
+https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches
+
+```bash
+# 检出远程分支到本地
+$ git checkout -b serverfix origin/serverfix
+```
+
+
+- [ ] https://mijingo.com/blog/saving-changes-with-git-stash
+
+- [ ] https://medium.freecodecamp.org/useful-tricks-you-might-not-know-about-git-stash-e8a9490f0a1a
+
+
 ### git flow
 
 https://www.ibrand.cc/open/article?course_id=1&chapter_id=2&article_id=6  

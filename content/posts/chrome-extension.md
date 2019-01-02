@@ -167,4 +167,5 @@ https://medium.freecodecamp.org/how-to-create-and-publish-a-chrome-extension-in-
 
 ### firefox
 
-https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions  
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension
