@@ -8,6 +8,13 @@ draft: true
 
 https://github.com/GoogleChrome/puppeteer
 
+#### api
+
+https://github.com/GoogleChrome/puppeteer/blob/v1.11.0/docs/api.md#  
+https://zhaoqize.github.io/puppeteer-api-zh_CN/#/
+
+#### examples
+
 https://github.com/GoogleChrome/puppeteer/tree/master/examples/
 
 https://github.com/GoogleChromeLabs/puppeteer-examples
@@ -15,6 +22,9 @@ https://github.com/GoogleChromeLabs/puppeteer-examples
 - [ ] https://github.com/checkly/puppeteer-examples
 
 > 这个仓库中的里够多了，参考参考
+
+https://puppeteersandbox.com/  
+https://checklyhq.com/
 
 https://github.com/emadehsan/thal  
 https://medium.com/@e_mad_ehsan/getting-started-with-puppeteer-and-chrome-headless-for-web-scrapping-6bf5979dee3e
@@ -24,7 +34,7 @@ https://www.aymen-loukil.com/en/blog-en/google-puppeteer-tutorial-with-examples/
 
 ### install
 
-希望添加 chromium 镜像源  
+添加 chromium 镜像源  
 https://github.com/cnpm/cnpmjs.org/issues/1246
 
 ```js
@@ -111,14 +121,14 @@ https://itnext.io/getting-started-using-puppeteer-headless-chrome-for-end-to-end
 Modern Web Automation With Python and Selenium  
 https://realpython.com/modern-web-automation-with-python-and-selenium/  
 Controlling the Web with Python  
-https://towardsdatascience.com/controlling-the-web-with-python-6fceb22c5f08
+https://towardsdatascience.com/controlling-the-web-with-python-6fceb22c5f08  
 Chapter 11 – Web Scraping  
 https://automatetheboringstuff.com/chapter11/
 
 
 - [ ] [Python+Selenium自动化操作网页](http://blog.xulihang.me/python-selenium-website-automation/)
 
-> 本来想这种自动化操作可以用autoit，但autoit的语言风格我现在实在不适应
+	> 本来想这种自动化操作可以用autoit，但autoit的语言风格我现在实在不适应
 
 
 #### auto hot key
@@ -143,6 +153,12 @@ http://the-automator.com/web-scraping-with-autohotkey/
 
 
 ### 浏览器插件
+
+Tampermonkey 脚本尝试与天马行空的想法  
+https://testerhome.com/topics/15248
+
+Chrome 自动化交互利器：用 tampermonkey 向页面注入自定义 Javascript  
+https://my.oschina.net/leejun2005/blog/636155
 
 用Tampermonkey实现自动化网页操作  
 http://qinghua.github.io/tampermonkey/

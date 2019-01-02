@@ -12,3 +12,10 @@ https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn
 https://juejin.im/post/5c0dd824f265da611a47b080
 
 - [ ] [浅析前端开发中的 MVC/MVP/MVVM 模式](http://liaokeyu.com/%E6%8A%80%E6%9C%AF/2017/06/01/js-architectural-patterns-overview.html)
+
+
+在 Chrome DevTools 中调试 JavaScript 入门  
+https://developers.google.com/web/tools/chrome-devtools/javascript/?hl=zh-cn
+
+Bubbling and capturing  
+https://javascript.info/bubbling-and-capturing

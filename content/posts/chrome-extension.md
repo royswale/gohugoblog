@@ -132,16 +132,18 @@ https://github.com/christiannwamba/gist-download-extension
 > 这个非常好，和我的需求一致
 > fixed 版本 在 gitee
 
-
-https://medium.freecodecamp.org/how-to-publish-your-chrome-extension-dd8400a3d53  
-https://medium.freecodecamp.org/how-to-create-and-publish-a-chrome-extension-in-20-minutes-6dc8395d7153
-
 ```js
 cd xxx
 yarn
 yarn build
 yarn watch
 ```
+
+
+https://medium.freecodecamp.org/how-to-publish-your-chrome-extension-dd8400a3d53  
+https://medium.freecodecamp.org/how-to-create-and-publish-a-chrome-extension-in-20-minutes-6dc8395d7153
+
+
 
 ### debug
 
