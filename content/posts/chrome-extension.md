@@ -148,7 +148,18 @@ yarn watch
 https://medium.freecodecamp.org/how-to-publish-your-chrome-extension-dd8400a3d53  
 https://medium.freecodecamp.org/how-to-create-and-publish-a-chrome-extension-in-20-minutes-6dc8395d7153
 
+### cookie
 
+https://developer.chrome.com/extensions/cookies
+
+https://stackoverflow.com/questions/23038032/why-is-chrome-cookies-undefined-in-a-content-script
+
+https://stackoverflow.com/questions/48200087/getting-undefined-for-chrome-cookie-get-in-chrome-extension?noredirect=1&lq=1
+
+https://stackoverflow.com/questions/5892176/getting-cookies-in-a-google-chrome-extension
+
+> 通过在background脚本中获取cookie并且设置storage，然后在content script中读取storage的方式解决  
+> 没有使用background script和content script之间传递message的方式
 
 ### debug
 
