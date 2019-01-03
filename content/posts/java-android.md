@@ -22,7 +22,15 @@ https://www.codecademy.com/courses/learn-java
 
 https://github.com/google/guava
 
+https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html
 
+https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html
+
+https://www.jetbrains.com/help/idea/running-applications.html
+
+http://fileadmin.cs.lth.se/cs/Education/EDA040/common/java21.pdf
+
+https://web.fe.up.pt/~aaguiar/teaching/pc/Java-QuickReferenceGuide.pdf
 
 #### kotlin
 
