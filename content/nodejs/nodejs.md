@@ -65,3 +65,12 @@ https://developer.okta.com/blog/2018/02/15/build-crud-app-vuejs-node
 #### authy  
 Quick and Easy 2FA: Adding Authy to a NodeJS App  
 https://www.twilio.com/blog/2016/11/quick-and-easy-2fa-adding-authy-to-a-nodejs-app.html
+
+
+### axios
+
+Using Axios with React  
+https://alligator.io/react/axios-react/
+
+HTTP REQUESTS USING AXIOS  
+https://flaviocopes.com/axios/

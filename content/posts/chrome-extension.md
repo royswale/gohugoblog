@@ -200,6 +200,10 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_firs
 
 ### more useful tutorial
 
+Web Maker — How I built a fast, offline front-end playground  
+Web Maker is a Chrome extension that gives you a blazing fast and offline front-end playground — right inside your browser.  
+https://medium.freecodecamp.org/web-maker-how-i-built-a-fast-offline-front-end-playground-9fe3629bc86f
+
 How to develop a chrome extension in 2018  
 https://usersnap.com/blog/develop-chrome-extension/
 
