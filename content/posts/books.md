@@ -4,6 +4,23 @@ date: 2018-12-22T09:37:51+08:00
 draft: true
 ---
 
+
+### golang
+
+《Go语言高级编程》开源图书  
+https://github.com/chai2010/advanced-go-programming-book
+
+Go语言从入门到进阶实战（视频教学版）  
+https://item.jd.com/12380444.html
+
+自己动手实现Lua：虚拟机、编译器和标准库  
+https://item.jd.com/12458778.html
+
+自己动手写Java虚拟机  
+https://item.jd.com/11935272.html
+
+### more
+
 http://www.icce.rug.nl/documents/cplusplus/
 
 https://cryptobook.nakov.com/

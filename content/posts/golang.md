@@ -23,7 +23,6 @@ https://www.flysnow.org/2018/10/14/golang-leetcode-two-sum.html
 
 https://grpc.io/
 
-https://golangbot.com/learn-golang-series/
 
 
 Go 语言之信号量  
@@ -39,3 +38,57 @@ https://medium.com/justforfunc/using-the-go-execution-tracer-to-speed-up-fractal
 
 Learning Go — from zero to hero  
 https://medium.freecodecamp.org/learning-go-from-zero-to-hero-d2a3223b3d86
+
+[译]Go Slice 秘籍  
+https://colobu.com/2017/03/22/Slice-Tricks/
+
+
+### golangbot
+
+https://golangbot.com/learn-golang-series/
+
+### gobyexample
+
+https://gobyexample.com/slices
+
+> Unlike arrays, slices are typed only by the elements they contain (not the number of elements). 
+
+### gorilla
+
+https://github.com/gorilla/mux
+
+### gin
+
+https://github.com/gin-gonic/gin
+
+```bash
+# windows cmd.exe
+goget github.com/gin-gonic/gin
+```
+
+- [ ] [Golang : string to array string](https://medium.com/@etiennerouzeaud/golang-string-to-array-string-dacc6b78a92e)
+
+### golang.org
+
+https://golang.org/doc/effective_go.html#slices
+
+### go get
+
+see Asana
+
+> goget.bat  
+> http https git all need proxy
+
+
+### resources
+
+https://github.com/avelino/awesome-go
+
+📚 Go资源精选中文版(含中文图书大全)(拒绝大杂烩)  
+https://github.com/chai2010/awesome-go-zh
+
+📚 《Go语言高级编程》开源图书  
+https://github.com/chai2010/advanced-go-programming-book
+
+欢迎各位gopher一起来完善这份笔记  
+https://github.com/xmge/gonote
