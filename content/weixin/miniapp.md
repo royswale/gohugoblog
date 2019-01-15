@@ -24,8 +24,10 @@ https://lbs.qq.com/qqmap_wx_jssdk/index.html
 https://github.com/jasondu/wxa-plugin-canvas
 
 
-【小程序】mpvue开发小程序初体验  
-https://fridolph.github.io/2018/05/07/%E3%80%90%E5%B0%8F%E7%A8%8B%E5%BA%8F%E3%80%91mpvue%E5%BC%80%E5%8F%91%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E4%BD%93%E9%AA%8C/
+[【小程序】mpvue开发小程序初体验](https://fridolph.github.io/2018/05/07/%E3%80%90%E5%B0%8F%E7%A8%8B%E5%BA%8F%E3%80%91mpvue%E5%BC%80%E5%8F%91%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E4%BD%93%E9%AA%8C/)
+
+快速上手  
+http://mpvue.com/mpvue/quickstart/
 
 #### wxlogin -> code2session
 

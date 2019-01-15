@@ -8,6 +8,22 @@ draft: false
 
 https://nodejs.org/en/docs/guides/getting-started-guide/
 
+### learn
+
+[使用ws - JavaScript教程 - 廖雪峰](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014727922914053479c966220f47da91991fa9c27ac3ea000)
+
+co 函数库的含义和用法 - 阮一峰  
+http://www.ruanyifeng.com/blog/2015/05/co.html
+
+《Node.js：来一打 C++ 扩展》已出版，求支持  
+https://xcoder.in/2018/06/14/node-cpp-advanced-sale/  
+《Node.js：来一打 C++ 扩展》随书源码  
+https://github.com/XadillaX/nyaa-nodejs-demo
+
+[全文]如何正确的学习Node.js  
+https://github.com/i5ting/How-to-learn-node-correctly  
+StuQ《Node.js微信开发》 - 狼叔  
+https://i5ting.github.io/wechat-dev-with-nodejs/index.html
 
 ### cron
 
