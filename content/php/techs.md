@@ -16,3 +16,16 @@ https://github.com/firebase/php-jwt
 ### dev
 
 - [ ] [Docker, PHPStorm and Xdebug, The definitive guide](https://dev.to/brpaz/docker-phpstorm-and-xdebug-the-definitive-guide-14og/)
+
+https://davidwalsh.name/random_bytes
+
+
+### plain php
+
+https://www.codeofaninja.com/2013/06/how-to-run-a-php-script.html  
+https://www.codeofaninja.com/2011/12/php-and-mysql-crud-tutorial.html  
+https://www.codeofaninja.com/2014/06/php-object-oriented-crud-example-oop.html  
+https://www.codeofaninja.com/2017/02/create-simple-rest-api-in-php.html  
+https://www.codeofaninja.com/2018/09/rest-api-authentication-example-php-jwt-tutorial.html
+
+> complete these tutorials step by step
