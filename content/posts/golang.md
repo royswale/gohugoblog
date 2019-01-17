@@ -79,6 +79,23 @@ see Asana
 > goget.bat  
 > http https git all need proxy
 
+### go module
+
+https://github.com/golang/go/wiki/Modules
+
+Go Modules使用教程  
+https://segmentfault.com/a/1190000016703769
+
+跳出Go module的泥潭  
+https://colobu.com/2018/08/27/learn-go-module/
+
+Golang官方包依赖管理工具 go mod 简明教程  
+https://ieevee.com/tech/2018/08/28/go-modules.html
+
+### project layout
+
+https://github.com/golang-standards/project-layout
+
 
 ### resources
 
