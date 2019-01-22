@@ -7,6 +7,8 @@ draft: true
 
 ### xdebug + phpstorm
 
+https://xdebug.org/docs/all_settings
+
 #### 方法#1 单个api接口
 
 1. install xdebug extension
@@ -61,3 +63,15 @@ https://www.jetbrains.com/help/phpstorm/browser-debugging-extensions.html
 	![](http://qiniu.xingtan.xyz/settings-php-debug.png)
 
 4. 还是需要配置方法#1的server和php web page这2项
+
+> 这种方式不需要手动点击phpstorm中右上角的绿色虫子按钮开启调试  
+> 只需要点击右上角的电话按钮开始监听调试连接请求  
+> 其实是浏览器插件自己带上了XDEBUG_SESSION_START参数
+
+#### 总结
+
+[PHPStorm + Xdebug 配置使用教程](https://segmentfault.com/a/1190000011907425)
+
+> PHPStorm使用PHP Remote Debug而不是PHP Web Application的话，就只需要在网址后面加上?XDEBUG_SESSION_START=PHPSTORM，然后就可以调试了，和浏览器没关系了，两者各有优劣，你的那种方法是需要依靠浏览器，浏览器是必须要安装插件，而使用Remote Debug的坏处在于需要加上参数，但却不依赖浏览器，不需要插件，手机App、微信都可以调试
+
+> 第五步，PHP Web Application在phpstrom 2017.3版本是PHP Web Page
